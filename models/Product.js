@@ -38,7 +38,7 @@ stock: {
 category_id: {
   type: Datatypes.INTEGER,  
   references: {
-    model: 'Category',
+    model: 'category',
     key: 'id',
     },
 },
