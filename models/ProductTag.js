@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
@@ -14,14 +14,14 @@ ProductTag.init(
       autoIncrement: true
     },
     product_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'product',
         key: 'id',
       },
     },
     tag_id: {
-     type: Datatypes.INTEGER,
+     type: DataTypes.INTEGER,
      references: {
       model: 'tag',
       key: 'id'

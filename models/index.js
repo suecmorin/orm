@@ -3,16 +3,15 @@ const Product = require('./Product');
 const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
-const { getEnabledCategories } = require('trace_events');
 
 // Products belongsTo Category
 Product.belongsTo(Category, {
-  foreignKey: 'category_id ',
+  foreignKey: 'category_id',
+  onDelete: 'SET NULL',
 });
 // Categories have many Products
 Category.hasMany(Product, {
  foreignKey: 'category_id',
- onDelete: 'SET NULL',
 });
 // Products belongsToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
